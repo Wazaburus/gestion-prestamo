@@ -30,7 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabLoans = new System.Windows.Forms.TabPage();
-            this.tabReportes = new System.Windows.Forms.TabPage();
+            this.tabReports = new System.Windows.Forms.TabPage();
             this.tabSecurity = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -38,7 +38,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabLoans);
-            this.tabControl1.Controls.Add(this.tabReportes);
+            this.tabControl1.Controls.Add(this.tabReports);
             this.tabControl1.Controls.Add(this.tabSecurity);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -56,15 +56,15 @@
             this.tabLoans.Text = "Préstamos";
             this.tabLoans.UseVisualStyleBackColor = true;
             // 
-            // tabReportes
+            // tabReports
             // 
-            this.tabReportes.Location = new System.Drawing.Point(4, 25);
-            this.tabReportes.Name = "tabReportes";
-            this.tabReportes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReportes.Size = new System.Drawing.Size(1248, 519);
-            this.tabReportes.TabIndex = 1;
-            this.tabReportes.Text = "Reportes";
-            this.tabReportes.UseVisualStyleBackColor = true;
+            this.tabReports.Location = new System.Drawing.Point(4, 25);
+            this.tabReports.Name = "tabReports";
+            this.tabReports.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReports.Size = new System.Drawing.Size(1248, 519);
+            this.tabReports.TabIndex = 1;
+            this.tabReports.Text = "Reportes";
+            this.tabReports.UseVisualStyleBackColor = true;
             // 
             // tabSecurity
             // 
@@ -92,7 +92,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabLoans;
-        private System.Windows.Forms.TabPage tabReportes;
+        private System.Windows.Forms.TabPage tabReports;
         private System.Windows.Forms.TabPage tabSecurity;
     }
 }
