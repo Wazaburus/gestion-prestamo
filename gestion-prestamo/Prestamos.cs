@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace gestion_prestamo
 {
-    public partial class Home : Form
+    public partial class Prestamos : Form
     {
-        public Home()
+        public Prestamos()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonPrestamosCancelar_Click(object sender, EventArgs e)
         {
-            var Prestamos = new Prestamos();
-            Prestamos.Show();
+            this.Close();
         }
     }
 }
