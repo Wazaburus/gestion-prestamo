@@ -29,52 +29,51 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabLoans = new System.Windows.Forms.TabPage();
+            this.tabReportes = new System.Windows.Forms.TabPage();
+            this.tabSecurity = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabLoans);
+            this.tabControl1.Controls.Add(this.tabReportes);
+            this.tabControl1.Controls.Add(this.tabSecurity);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1256, 548);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // tabLoans
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1248, 519);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabLoans.Location = new System.Drawing.Point(4, 25);
+            this.tabLoans.Name = "tabLoans";
+            this.tabLoans.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLoans.Size = new System.Drawing.Size(1248, 519);
+            this.tabLoans.TabIndex = 0;
+            this.tabLoans.Text = "Préstamos";
+            this.tabLoans.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabReportes
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1248, 519);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabReportes.Location = new System.Drawing.Point(4, 25);
+            this.tabReportes.Name = "tabReportes";
+            this.tabReportes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReportes.Size = new System.Drawing.Size(1248, 519);
+            this.tabReportes.TabIndex = 1;
+            this.tabReportes.Text = "Reportes";
+            this.tabReportes.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // tabSecurity
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1248, 519);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabSecurity.Location = new System.Drawing.Point(4, 25);
+            this.tabSecurity.Name = "tabSecurity";
+            this.tabSecurity.Size = new System.Drawing.Size(1248, 519);
+            this.tabSecurity.TabIndex = 0;
+            this.tabSecurity.Text = "Seguridad";
+            this.tabSecurity.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
@@ -92,9 +91,9 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabLoans;
+        private System.Windows.Forms.TabPage tabReportes;
+        private System.Windows.Forms.TabPage tabSecurity;
     }
 }
 
