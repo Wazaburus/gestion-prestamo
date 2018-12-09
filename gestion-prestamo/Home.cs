@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsGestion
+namespace gestion_prestamo
 {
-    public partial class Kura : Form
+    public partial class Home : Form
     {
-        public Kura()
+        public Home()
         {
             InitializeComponent();
         }
