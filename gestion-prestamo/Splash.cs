@@ -16,5 +16,13 @@ namespace gestion_prestamo
         {
             InitializeComponent();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBarSplash.Increment(10);
+
+            if (progressBarSplash.Value == 100)
+                timer1.Stop();
+        }
     }
 }
