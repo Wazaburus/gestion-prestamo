@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="loans_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="loan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="debbtor_name" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="debtor_document_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="debtor_telephone" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="guarantor_name" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="guarantor_document_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="guarantor_telephone" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="amount" Type="money" Nullable="false" />
+          <Property Name="debt" Type="money" />
+          <Property Name="closing_expense" Type="money" />
+          <Property Name="time" Type="varchar" MaxLength="200" />
+          <Property Name="rate" Type="decimal" Precision="18" Scale="10" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="loan_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="amount" Type="money" />
+        </EntityType>
+        <Association Name="FK__payment__loan_id__398D8EEE">
+          <End Role="loan" Type="Self.loan" Multiplicity="1" />
+          <End Role="payment" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loan">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="payment">
+              <PropertyRef Name="loan_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="loans_dbModelStoreContainer">
+          <EntitySet Name="loan" EntityType="Self.loan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="payment" EntityType="Self.payment" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__payment__loan_id__398D8EEE" Association="Self.FK__payment__loan_id__398D8EEE">
+            <End Role="loan" EntitySet="loan" />
+            <End Role="payment" EntitySet="payment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="loans_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="loan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="debbtor_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="debtor_document_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="debtor_telephone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="guarantor_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="guarantor_document_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="guarantor_telephone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="debt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="closing_expense" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="time" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="rate" Type="Decimal" Precision="18" Scale="10" />
+          <NavigationProperty Name="payments" Relationship="Self.FK__payment__loan_id__398D8EEE" FromRole="loan" ToRole="payment" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="loan_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="amount" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="loan" Relationship="Self.FK__payment__loan_id__398D8EEE" FromRole="payment" ToRole="loan" />
+        </EntityType>
+        <Association Name="FK__payment__loan_id__398D8EEE">
+          <End Role="loan" Type="Self.loan" Multiplicity="1" />
+          <End Role="payment" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loan">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="payment">
+              <PropertyRef Name="loan_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="loans_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="loans" EntityType="Self.loan" />
+          <EntitySet Name="payments" EntityType="Self.payment" />
+          <AssociationSet Name="FK__payment__loan_id__398D8EEE" Association="Self.FK__payment__loan_id__398D8EEE">
+            <End Role="loan" EntitySet="loans" />
+            <End Role="payment" EntitySet="payments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="loans_dbModelStoreContainer" CdmEntityContainer="loans_dbEntities">
+          <EntitySetMapping Name="loans">
+            <EntityTypeMapping TypeName="loans_dbModel.loan">
+              <MappingFragment StoreEntitySet="loan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="debbtor_name" ColumnName="debbtor_name" />
+                <ScalarProperty Name="debtor_document_id" ColumnName="debtor_document_id" />
+                <ScalarProperty Name="debtor_telephone" ColumnName="debtor_telephone" />
+                <ScalarProperty Name="guarantor_name" ColumnName="guarantor_name" />
+                <ScalarProperty Name="guarantor_document_id" ColumnName="guarantor_document_id" />
+                <ScalarProperty Name="guarantor_telephone" ColumnName="guarantor_telephone" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="debt" ColumnName="debt" />
+                <ScalarProperty Name="closing_expense" ColumnName="closing_expense" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payments">
+            <EntityTypeMapping TypeName="loans_dbModel.payment">
+              <MappingFragment StoreEntitySet="payment">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="loan_id" ColumnName="loan_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
