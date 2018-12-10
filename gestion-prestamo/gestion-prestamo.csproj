@@ -78,6 +78,11 @@
     <Compile Include="db\payment.cs">
       <DependentUpon>loan_db.tt</DependentUpon>
     </Compile>
+    <Compile Include="loans_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loans_dbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +127,17 @@
     </EntityDeploy>
     <None Include="db\loan_db.edmx.diagram">
       <DependentUpon>loan_db.edmx</DependentUpon>
+    </None>
+    <None Include="loans_dbDataSet.xsc">
+      <DependentUpon>loans_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="loans_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>loans_dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="loans_dbDataSet.xss">
+      <DependentUpon>loans_dbDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
