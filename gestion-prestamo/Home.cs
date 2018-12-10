@@ -31,8 +31,20 @@ namespace gestion_prestamo
 
         private void Home_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'loans_dbDataSet1.login' table. You can move, or remove it, as needed.
+            this.loginTableAdapter.Fill(this.loans_dbDataSet1.login);
             // TODO: This line of code loads data into the 'loans_dbDataSet.loan' table. You can move, or remove it, as needed.
             this.loanTableAdapter.Fill(this.loans_dbDataSet.loan);
+        }
+
+        public void loaddataPrestamos()
+        {
+            this.loanTableAdapter.Fill(this.loans_dbDataSet.loan);//do what you do in load data in order to update data in datagrid
+        }
+
+        public void loaddataSeguridad()
+        {
+            this.loginTableAdapter.Fill(this.loans_dbDataSet1.login);//do what you do in load data in order to update data in datagrid
         }
     }
 }

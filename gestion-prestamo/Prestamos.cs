@@ -147,6 +147,10 @@ namespace gestion_prestamo
             {
                 db.SaveChanges();
                 MessageBox.Show("Préstamo registrado.");
+
+                Home obj = (Home)Application.OpenForms["Home"];
+                obj.loaddataPrestamos();
+
                 Close();
             }
             catch (Exception ex)

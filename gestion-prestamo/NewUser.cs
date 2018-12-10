@@ -60,6 +60,10 @@ namespace gestion_prestamo
             {
                 db.SaveChanges();
                 MessageBox.Show("Usuario registrado.");
+
+                Home obj = (Home)Application.OpenForms["Home"];
+                obj.loaddataSeguridad();
+
                 Close();
             }
             catch (Exception ex)
