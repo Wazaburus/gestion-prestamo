@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace gestion_prestamo
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
-        public Login()
+        public frmLogin()
         {
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();

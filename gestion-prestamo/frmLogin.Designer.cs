@@ -1,6 +1,6 @@
 ﻿namespace gestion_prestamo
 {
-    partial class Login
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
