@@ -27,5 +27,6 @@ namespace gestion_prestamo.db
     
         public virtual DbSet<loan> loans { get; set; }
         public virtual DbSet<payment> payments { get; set; }
+        public virtual DbSet<login> logins { get; set; }
     }
 }

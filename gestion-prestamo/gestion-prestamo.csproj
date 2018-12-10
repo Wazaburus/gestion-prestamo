@@ -72,8 +72,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>loan_db.edmx</DependentUpon>
     </Compile>
+    <Compile Include="db\login.cs">
+      <DependentUpon>loan_db.tt</DependentUpon>
+    </Compile>
     <Compile Include="db\payment.cs">
       <DependentUpon>loan_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -89,6 +98,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="NewUser.resx">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

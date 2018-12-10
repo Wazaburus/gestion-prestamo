@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="loans_dbModel.loan" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="loans_dbModel.payment" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="loans_dbModel.FK__payment__loan_id__398D8EEE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="loans_dbModel.login" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
