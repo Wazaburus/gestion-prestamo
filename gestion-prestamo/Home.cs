@@ -22,5 +22,11 @@ namespace gestion_prestamo
             var Prestamos = new Prestamos();
             Prestamos.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var NewUser = new Usuario();
+            NewUser.Show();
+        }
     }
 }
